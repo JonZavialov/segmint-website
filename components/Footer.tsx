@@ -12,9 +12,9 @@ const Footer: React.FC = () => {
         </p>
         <a
           className="inline-flex items-center gap-2 text-white font-mono hover:text-primary transition-colors border-b border-primary pb-0.5"
-          href="mailto:hello@segmint.dev"
+          href="https://jonzav.me"
         >
-          hello@segmint.dev{" "}
+          Jonathan Zavialov
           <span className="material-symbols-outlined text-sm">
             arrow_outward
           </span>
@@ -23,13 +23,6 @@ const Footer: React.FC = () => {
 
       <div className="text-right">
         <div className="flex gap-6 justify-end mb-4">
-          {/* Removed Documentation link as requested */}
-          <a
-            className="text-text-secondary hover:text-white transition-colors"
-            href="https://jonzav.me"
-          >
-            Built By Jon Zavialov
-          </a>
           <a
             className="text-text-secondary hover:text-white transition-colors"
             href="https://github.com/JonZavialov/segmint"
@@ -38,7 +31,7 @@ const Footer: React.FC = () => {
           </a>
         </div>
         <p className="text-xs text-text-secondary font-mono opacity-50">
-          © 2024 Segmint Inc. All systems operational.
+          © 2026 Jonathan Zavialov. All systems operational.
         </p>
       </div>
     </footer>
