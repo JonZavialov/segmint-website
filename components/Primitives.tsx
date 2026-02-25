@@ -21,29 +21,49 @@ const Primitives: React.FC = () => {
     <section id="primitives" className="py-24 border-b border-border-dark">
       <div className="flex justify-between items-end mb-12">
         <h2 className="text-3xl font-bold tracking-tight text-white">Core Primitives</h2>
-        <span className="font-mono text-xs text-text-secondary hidden sm:block">src/domain/models.rs</span>
+        <span className="font-mono text-xs text-text-secondary hidden sm:block">src/models.ts</span>
       </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <PrimitiveCard 
-          type="struct"
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:grid-rows-2">
+        <PrimitiveCard
+          type="interface"
           title="RepoStatus"
-          description="Current working directory state, including branch ref, tracked/untracked files, and HEAD hash."
+          description="Structured repository snapshot: HEAD ref, branch, staged/unstaged/untracked files, upstream tracking, and merge/rebase state."
         />
-        <PrimitiveCard 
-          type="struct"
+        <PrimitiveCard
+          type="interface"
           title="Change"
-          description="A typed modification record containing file path, change type (add/mod/del), and associated metadata."
+          description="A single file's diff — file path, unique ID, and an array of Hunk objects representing each discrete edit region."
         />
-        <PrimitiveCard 
-          type="struct"
+        <PrimitiveCard
+          type="interface"
           title="Hunk"
-          description="A discrete segment of code diff, containing source lines, line numbers, and context anchors."
+          description="A discrete diff segment with the full @@ header, old/new line numbers, and the raw content lines for agent consumption."
         />
-        <PrimitiveCard 
-          type="type"
-          title="ChangeGroup"
-          description="A collection of Change objects logically related by semantic similarity (via local embeddings)."
+        <PrimitiveCard
+          type="interface"
+          title="LogCommit"
+          description="A commit history entry: SHA, short SHA, subject, author name/email/date, and parent refs for graph traversal."
+        />
+        <PrimitiveCard
+          type="interface"
+          title="CommitDetail"
+          description="Full commit metadata including body, committer info, affected file list, and a structured diff with Change objects."
+        />
+        <PrimitiveCard
+          type="interface"
+          title="BlameResult"
+          description="Line-level attribution for a file: each line carries its content, line number, and the commit that last touched it."
+        />
+        <PrimitiveCard
+          type="interface"
+          title="StageResult"
+          description="Result of a stage_changes operation: the paths that were staged and whether the call was a dry run."
+        />
+        <PrimitiveCard
+          type="interface"
+          title="ChangeSummary"
+          description="Lightweight diff stats (hunk count, insertions, deletions) for a file — returned by list_changes in summary_only mode."
         />
       </div>
     </section>

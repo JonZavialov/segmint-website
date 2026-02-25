@@ -18,26 +18,26 @@ const Features: React.FC = () => {
       <div className="md:col-span-4">
         <h2 className="text-2xl font-bold tracking-tight mb-4 text-white">Runtime Capabilities</h2>
         <p className="text-text-secondary text-base">
-          Segmint functions as a read-only substrate for LLMs to query repository state. It bridges raw git binaries to the Model Context Protocol.
+          Segmint is a read-only substrate for AI agents to query repository state, plus controlled workspace mutation tools — all exposed as structured MCP primitives over stdio.
         </p>
       </div>
-      
+
       <div className="md:col-span-8 grid sm:grid-cols-2 gap-6">
-        <FeatureItem 
-          title="Structured Diffs" 
-          description="Git diffs are parsed into typed objects (Change, Hunk) rather than raw text, providing deterministic inputs for agent reasoning." 
+        <FeatureItem
+          title="Structured Diffs"
+          description="Git diffs are parsed into typed Change and Hunk objects rather than raw text, providing deterministic inputs for agent reasoning."
         />
-        <FeatureItem 
-          title="MCP Native" 
-          description="Exposes repository state via the Model Context Protocol, allowing Claude and other agents to query git internals directly." 
+        <FeatureItem
+          title="MCP Native"
+          description="Exposes 10 tools over the Model Context Protocol via stdio transport — compatible with Claude, Cursor, and any MCP-capable agent."
         />
-        <FeatureItem 
-          title="Semantic Grouping" 
-          description="Leverages embeddings to cluster related edits into logical ChangeGroups, helping agents understand feature boundaries." 
+        <FeatureItem
+          title="Blame & History"
+          description="Line-level blame attribution and structured commit history with full diff details, parent refs, and author metadata."
         />
-        <FeatureItem 
-          title="Repository Truth" 
-          description="Binds directly to git status and log to ensure the agent's context model exactly matches the on-disk state." 
+        <FeatureItem
+          title="Workspace Mutation"
+          description="Tier 2 tools for staging and unstaging files with dry-run guardrails — agents can safely compose commits without destructive operations."
         />
       </div>
     </section>

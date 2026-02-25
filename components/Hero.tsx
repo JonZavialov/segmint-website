@@ -8,16 +8,27 @@ const Hero: React.FC = () => {
           <span className="animate-pulse absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
           <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
         </span>
-        v0.1.0-alpha
+        v0.2.1 — 10 MCP tools
       </div>
 
       <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-6 text-white leading-none">
         Segmint
       </h1>
 
-      <p className="text-xl md:text-2xl font-light text-text-secondary mb-10 tracking-tight max-w-2xl mx-auto">
+      <p className="text-xl md:text-2xl font-light text-text-secondary mb-6 tracking-tight max-w-2xl mx-auto">
         A semantic Git runtime for AI agents.
       </p>
+
+      <a
+        href="https://jonzav.me"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mb-10 inline-flex items-center gap-2 text-sm text-text-primary font-mono hover:text-white transition-colors group"
+      >
+        <span className="text-text-secondary">by</span>
+        <span className="font-medium underline underline-offset-4 decoration-primary">Jon Zavialov</span>
+        <span className="material-symbols-outlined text-base text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">arrow_outward</span>
+      </a>
 
       <div className="max-w-2xl w-full bg-surface-dark border border-border-dark rounded-md p-6 mb-12 text-left mx-auto shadow-2xl shadow-black/50 overflow-hidden">
         <div className="flex justify-between items-center mb-4 border-b border-border-dark pb-2">
@@ -30,23 +41,10 @@ const Hero: React.FC = () => {
           </div>
         </div>
         <pre className="font-mono text-xs text-text-secondary leading-relaxed overflow-x-auto">
-          <span className="text-text-primary">{"{"}</span>
-          <span className="text-primary">"status"</span>:{" "}
-          <span className="text-text-primary">"clean"</span>,
-          <span className="text-primary">"branch"</span>:{" "}
-          <span className="text-green-500">"feature/semantic-diffs"</span>,
-          <span className="text-primary">"head"</span>:{" "}
-          <span className="text-yellow-500">"e8b7f92"</span>,
-          <span className="text-primary">"changes"</span>: [
-          <span className="text-text-primary">{"{"}</span>
-          <span className="text-primary">"type"</span>:{" "}
-          <span className="text-text-primary">"modified"</span>,
-          <span className="text-primary">"path"</span>:{" "}
-          <span className="text-text-primary">"src/lib.rs"</span>,
-          <span className="text-primary">"hunks"</span>: [
-          <span className="text-text-secondary">/* structured_diff_obj */</span>
-          ]<span className="text-text-primary">{"}"}</span>]
-          <span className="text-text-primary">{"}"}</span>
+{`{ `}<span className="text-primary">"is_git_repo"</span>{`: `}<span className="text-yellow-400">true</span>{`,
+  `}<span className="text-primary">"head"</span>{`: { `}<span className="text-primary">"branch"</span>{`: `}<span className="text-green-400">"main"</span>{`, `}<span className="text-primary">"short_sha"</span>{`: `}<span className="text-yellow-400">"e8b7f92"</span>{` },
+  `}<span className="text-primary">"staged"</span>{`: [`}<span className="text-green-400">"src/server.ts"</span>{`],
+  `}<span className="text-primary">"unstaged"</span>{`: [`}<span className="text-green-400">"src/models.ts"</span>{`] }`}
         </pre>
       </div>
 
@@ -60,25 +58,13 @@ const Hero: React.FC = () => {
           </svg>
           View on GitHub
         </a>
-        <div className="flex flex-col items-center">
-          <button
-            disabled
-            className="h-12 w-full sm:w-auto px-8 flex items-center justify-center rounded-md border border-border-dark bg-surface-dark text-text-secondary font-mono text-sm font-medium cursor-not-allowed opacity-75"
-          >
-            Coming Soon
-          </button>
-        </div>
-      </div>
-      <p className="mt-6 text-xs text-text-secondary font-mono">
-        Early access opening soon.{" "}
         <a
-          href="https://github.com/JonZavialov/segmint"
-          className="underline hover:text-white"
+          href="https://www.npmjs.com/package/segmint"
+          className="h-12 w-full sm:w-auto px-8 flex items-center justify-center rounded-md border border-border-dark bg-surface-dark text-text-primary font-mono text-sm font-medium hover:border-white/30 hover:text-white transition-all"
         >
-          Follow development
+          npm install segmint
         </a>
-        .
-      </p>
+      </div>
     </section>
   );
 };

@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
           Ready to integrate?
         </h2>
         <p className="text-text-secondary text-sm mb-6">
-          Segmint is currently in closed alpha.
+          Available now on npm. Install and connect any MCP-compatible agent.
         </p>
         <a
           className="inline-flex items-center gap-2 text-white font-mono hover:text-primary transition-colors border-b border-primary pb-0.5"
